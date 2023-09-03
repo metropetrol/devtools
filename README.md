@@ -9,16 +9,12 @@ This is how to setup my preferred dev tools.
 1. zellij, `brew install zellij`
 
 #### Copy the config files to their respective places:
-1. zellij
-  - copy files to `~/.config/zellij` 
-1. helix
-  - copy files to `~/.config/helix`
-1. copy zsh config to `~/.zshrc`
-  - `cat zsh/zshrc >> ~/.zshrc`
+1. zellij, copy files to `~/.config/zellij` 
+1. helix, copy files to `~/.config/helix`
+1. copy zsh config to `~/.zshrc`, `cat zsh/zshrc >> ~/.zshrc`
 
 #### Configure some tools:
-1. powerlevel10k
-  - `p10k configure`
+1. powerlevel10k, `p10k configure`
 1. git
 ```
 git config --global --set pull.rebase true
