@@ -1,0 +1,32 @@
+
+alias ll="ls -lahtr"
+
+alias ec='hx ~/.zshrc'
+alias sc='source ~/.zshrc'
+
+alias z="zellij"
+alias gst='git status'
+alias gd='git dag'
+
+alias gad='git add .'
+alias gam='git commit --amend'
+alias gc='git commit -m'
+alias grest='git restore'
+
+alias gch='git checkout'
+alias gp='git pull'
+
+alias gre='git rebase'
+
+alias gbr='git branch'
+alias gbrc="git switch -c"
+alias gup="gbr -u"
+
+alias gdiff="git diff"
+alias gdf='gdiff HEAD^ HEAD'
+alias gdfa="gdiff --name-only HEAD^ HEAD"
+alias gmv="git reset --hard "
+gdff () {
+    gdf -- **/$1 
+}
+

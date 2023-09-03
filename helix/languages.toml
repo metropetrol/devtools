@@ -1,0 +1,87 @@
+#
+# PYTHON
+#
+
+[language-server.global-pylsp]
+command = "python"
+args =  ["-m", "pylsp"]
+
+[language-server.global-pylsp.config.pylsp]
+configurationSources = ['flake8']
+
+[language-server.global-pylsp.config.pylsp.plugins]
+rope_autoimport = { enabled = true }
+black = { enabled = true, line_length = 100 }
+flake8 = { enabled = true, maxLineLength = 100 }
+pylsp_mypy = { enabled = true, overrides = [true, "--no-pretty", "--python-executable", "/local/home/jneshunt/.asdf/installs/python/3.9.16/bin/python"] }
+autopep8 = { enabled = false }
+yapf = { enabled = false }
+pyflakes = { enabled = false }
+pycodestyle = { enabled = false }
+pydocstyle = { enabled = false }
+mccabe = { enabled = false }
+
+[[language]]
+name = "python"
+auto-format = true
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct"]
+shebangs = ["python"]
+roots = []
+comment-token = "#"
+language-servers = [{ name = "global-pylsp" }]
+indent = { tab-width = 4, unit = "    " }
+
+#
+# TYPESCRIPT/JAVASCRIPT
+#
+
+[language-server.global-typescript]
+command = "npx"
+args =  ["typescript-language-server", "--stdio"]
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+injection-regex = "(js|javascript)"
+language-id = "javascript"
+file-types = ["js", "mjs", "cjs"]
+shebangs = ["node"]
+roots = []
+comment-token = "//"
+language-servers = [ "global-typescript" ]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "jsx"
+scope = "source.jsx"
+injection-regex = "jsx"
+language-id = "javascriptreact"
+file-types = ["jsx"]
+roots = []
+comment-token = "//"
+language-servers = [ "global-typescript" ]
+indent = { tab-width = 2, unit = "  " }
+grammar = "javascript"
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "(ts|typescript)"
+file-types = ["ts", "mts", "cts"]
+language-id = "typescript"
+shebangs = []
+roots = []
+language-servers = [ "global-typescript" ]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "tsx"
+scope = "source.tsx"
+injection-regex = "(tsx)" # |typescript
+language-id = "typescriptreact"
+file-types = ["tsx"]
+roots = []
+language-servers = [ "global-typescript" ]
+indent = { tab-width = 2, unit = "  " }
