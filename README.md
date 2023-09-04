@@ -14,7 +14,7 @@ This is how to setup my preferred dev tools.
 1. copy zsh config to `~/.zshrc`, `cat zsh/zshrc >> ~/.zshrc`
 
 #### Configure some tools:
-1. powerlevel10k, `p10k configure`
+1. powerlevel10k, `p10k configure`, then copy config to `~/.p10k.zsh`
 1. git
 ```
 git config --global --set pull.rebase true
